@@ -1,12 +1,19 @@
 {
-    "version":2,
-    "builds":[
-        {"src": "*.js","use":"@vercel/node"}
-    ],
-    "routes":[
+    "version": 2,
+    "builds": [
         {
-            "src":"/(.*)",
-            "dest":"/"
+            "src": "index.js",  // Point to your main server file
+            "use": "@vercel/node"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/api/(.*)",  // Route for API endpoints
+            "dest": "/index.js"  // Adjust this to your server file
+        },
+        {
+            "src": "/(.*)",  // Route for the home page and other routes
+            "dest": "/index.js"
         }
     ]
 }
