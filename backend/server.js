@@ -14,7 +14,11 @@ const app=express();
 //without this line if you try to post data to server it won't work. Even if you are sending data /post data to server through req.body and when you will receive that data and see the req.body will be a empty object
 app.use(express.json());
 // Enable CORS for specific origin
+<<<<<<< HEAD
 // const allowedOrigins = ['https://amazona-6391.vercel.app']; // Update this with your frontend URL
+=======
+const allowedOrigins = ['https://amazona-6391.vercel.app']; // Update this with your frontend URL
+>>>>>>> f11ba31ae5556428bf1f508998708d9c32bc1255
 
 // app.use(cors({
 //     origin: allowedOrigins, // Only allow specified origins
