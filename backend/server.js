@@ -1,6 +1,7 @@
 import express from 'express';
 import data from './data.js'
 import dotenv from 'dotenv';
+import cors from 'cors';
 import mongoose from 'mongoose'
 import userRouter from './routes/userRoute.js';
 import seedRouter from './routes/seedRoute.js';
