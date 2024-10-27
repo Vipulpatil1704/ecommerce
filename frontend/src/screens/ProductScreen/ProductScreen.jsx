@@ -26,7 +26,7 @@ export default function ProductScreen() {
     const fetchData = async () => {
         dispatch({ type: 'FETCH_REQUEST' });
         try {
-            const response = await fetch(`/api/products/slug/${slug}`);
+            const response = await fetch(`https://amazona-puce.vercel.app/api/products/slug/${slug}`);
             const product = await response.json();
             if(response.status!==404)
                 dispatch({ type: 'FETCH_SUCCESS', payload: product });
@@ -51,7 +51,7 @@ export default function ProductScreen() {
         //make sure that quantity of item should be avaiable in stock in data
         const existItem=cart.cartItems.find((x)=>x._id===product._id);
         const quantity=existItem ? existItem.quantity +1 :1;
-        const data =await fetch(`/api/products/${product._id}`);
+        const data =await fetch(`https://amazona-puce.vercel.app/api/products/${product._id}`);
         if(data.countInStock<quantity){
             window.alert('sorry,Product is out of stock');
             return;
