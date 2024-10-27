@@ -1,0 +1,6 @@
+.placeorder{
+    display: flex;
+    column-gap: 3em;
+    width:40%;
+    margin:auto;
+}

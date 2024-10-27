@@ -1,0 +1,21 @@
+.order-container{
+    display: flex;
+    width:40%;
+    margin:auto;
+    flex-direction: column;
+}
+.order{
+    margin-top:2em;
+    display: flex;
+    
+
+}
+.left-child{
+    display:flex;
+    flex-direction: column;
+    row-gap: 1em;
+}
+.right-child{
+    display: flex;
+    flex-direction: column;
+}

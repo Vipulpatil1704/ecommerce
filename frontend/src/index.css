@@ -1,0 +1,39 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+:root{
+  --content-margin-lr:0 12px;
+  --content-padding:12px;
+}
+header{
+  background-color: black;
+  color:white;
+}
+.body-content{
+  margin:var(--content-margin-lr);
+  padding:var(--content-padding);
+}
+footer{
+  text-align:center;
+}
+.sidebar{
+  transition:all 2s ease;
+  position:absolute;
+  top:0;
+  bottom:0;
+  width:300px;
+  left:-300px;
+  background-color:black;
+  color:white;
+}
+.active{
+  left:0;
+}
+.sideview{
+  margin-left:300px;
+}
+.sidebar-list{
+  display: flex;
+  flex-direction: column;
+}

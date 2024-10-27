@@ -1,0 +1,11 @@
+.search{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+.sort-types{
+    flex-basis:30%;
+}
+.results{
+    flex-basis:70%;
+}

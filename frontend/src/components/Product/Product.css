@@ -1,0 +1,35 @@
+.product{
+    border:0.5px solid #000000;
+    flex:1;
+    padding:1rem;
+}
+.product-image{
+    /* to make image responsive */
+    max-width:100%;
+}
+.product-container{
+    display:flex;
+    gap:2rem;
+    flex-wrap:wrap;
+    padding:2rem;
+}
+.product-card{
+    max-width:300px;
+}
+/* Tablet view  */
+@media (max-width:768px){
+    .product{
+        flex-basis:40%;
+    }
+    .product-container{
+        padding:1rem;
+    }
+}
+@media (max-width:468px){
+    .product{
+        flex-basis:100%;
+    }
+    .product-container{
+        padding:0.5rem;
+    }
+}
