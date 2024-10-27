@@ -28,7 +28,7 @@ function App() {
   useEffect(()=>{
     const fetchCategories=async ()=>{
       try{
-        const response=await fetch('/api/products/categories');
+        const response=await fetch('https://amazona-puce.vercel.app/api/products/categories');
         const data=await response.json();
         setCategories(data);
       }

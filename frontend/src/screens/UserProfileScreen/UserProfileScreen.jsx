@@ -16,7 +16,7 @@ export default function UserProfileScreen() {
             alert('Password and confirm password does not match');
             return;
         }
-        const response = await fetch('/api/Users', { method: 'PUT', headers: {
+        const response = await fetch('https://amazona-puce.vercel.app/api/Users', { method: 'PUT', headers: {
             'Content-Type': 'application/json' // Set the content type header
         }, body: JSON.stringify(credentials) });
         const data = await response.json();

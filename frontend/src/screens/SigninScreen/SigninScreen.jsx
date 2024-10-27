@@ -12,7 +12,7 @@ export default function SigninScreen() {
     const {state,dispatch}=useContext(Store);
     async function handleSubmit(e){
         e.preventDefault();
-        const response=await fetch('/api/Users/signin',{
+        const response=await fetch('https://amazona-puce.vercel.app/api/Users/signin',{
             method:'POST',
             headers:{
                 'content-type':'application/json',

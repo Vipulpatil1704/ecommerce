@@ -32,7 +32,7 @@ export default function SearchScreen() {
         
         const fetchData=async ()=>{
             try{
-                const response=await fetch(`/api/products/search/?page=${page}&query=${query}&category=${category}&price=${price}&rating=${rating}&order=${order}`);
+                const response=await fetch(`https://amazona-puce.vercel.app/api/products/search/?page=${page}&query=${query}&category=${category}&price=${price}&rating=${rating}&order=${order}`);
                 const data=await response.json();
                 dispatch({type:'FETCH_SUCCESS',payload:data});
             }
@@ -45,7 +45,7 @@ export default function SearchScreen() {
     useEffect(() => {
         const fetchCategories = async () => {
             try {
-                const response = await fetch(`/api/products/categories`);
+                const response = await fetch(`https://amazona-puce.vercel.app/api/products/categories`);
                 const data = await response.json();
                 setCategories(data);
             }

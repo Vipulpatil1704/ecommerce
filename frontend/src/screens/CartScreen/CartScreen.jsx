@@ -6,7 +6,7 @@ function Cart(props) {
     const { state,dispatch } = useContext(Store);
     const { cart: { cartItems } } = state;
     async function updateCartHandler(id,quantity){
-        const response=await fetch(`/api/products/${id}`);
+        const response=await fetch(`https://amazona-puce.vercel.app/api/products/${id}`);
         const data=await response.json();
         if(data.countInStock<quantity){
             window.alert('sorry,product is out of stock');

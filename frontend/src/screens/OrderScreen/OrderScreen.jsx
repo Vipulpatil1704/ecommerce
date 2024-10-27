@@ -57,7 +57,7 @@ export default function OrderScreen() {
             try{
                 console.log("inside try block");
                 dispatch({type:'PAY_REQUEST'});
-                 const response=await fetch(`/api/orders/${order._id}/pay`,{
+                 const response=await fetch(`https://amazona-puce.vercel.app/api/orders/${order._id}/pay`,{
                     method:'PUT',
                     headers:{
                         'content-type':'application/json',
@@ -87,7 +87,7 @@ export default function OrderScreen() {
         const fetchOrder=async ()=>{
             dispatch({type:'FETCH_REQUEST'});
             try{
-                const response=await fetch(`/api/orders/${orderId}`);
+                const response=await fetch(`https://amazona-puce.vercel.app/api/orders/${orderId}`);
                 const data=await response.json();
                 if(response.status!==404){ 
                     dispatch({type:'FETCH_SUCCESS',payload:data});
@@ -113,7 +113,7 @@ export default function OrderScreen() {
         }
         else{
             const loadPaypalScript=async ()=>{
-               const response= await fetch('/api/keys/paypal');
+               const response= await fetch('https://amazona-puce.vercel.app/api/keys/paypal');
                const {data:clientId}=await response.json();
                paypalDispatch({type:'resetOptions',value:{'client-id':clientId,currency:'USD',
                }})

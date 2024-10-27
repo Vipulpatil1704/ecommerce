@@ -19,7 +19,7 @@ export default function OrderHistoryScreen() {
     useEffect(()=>{
         const fetchData=async()=>{
             dispatch({type:'FETCH_REQUEST'});
-            const response=await fetch('/api/orders/',{headers:{authorization:`Bearer ${userInfo.token}`}});
+            const response=await fetch('https://amazona-puce.vercel.app/api/orders/',{headers:{authorization:`Bearer ${userInfo.token}`}});
             const data=await response.json();
             if(response.status!==404){
                 dispatch({type:'FETCH_SUCCESS',payload:data});
