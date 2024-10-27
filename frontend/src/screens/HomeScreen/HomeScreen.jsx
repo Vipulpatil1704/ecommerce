@@ -21,7 +21,7 @@ export default function Home() {
   const fetchData=async()=>{
     dispatch({type:'FETCH_REQUEST'});
     try{
-      const response=await fetch("https://amazona-puce.vercel.app//api/products");
+      const response=await fetch("https://amazona-puce.vercel.app/api/products");
       const products=await response.json();
       dispatch({type:'FETCH_SUCCESS',payload:products});
     }
