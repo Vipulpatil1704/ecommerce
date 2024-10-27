@@ -14,18 +14,23 @@ const app=express();
 //without this line if you try to post data to server it won't work. Even if you are sending data /post data to server through req.body and when you will receive that data and see the req.body will be a empty object
 app.use(express.json());
 // Enable CORS for specific origin
-const allowedOrigins = ['https://amazona-6391.vercel.app/']; // Update this with your frontend URL
+// const allowedOrigins = ['https://amazona-6391.vercel.app']; // Update this with your frontend URL
 
-app.use(cors({
-    origin: allowedOrigins, // Only allow specified origins
-    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Specify allowed methods
-    credentials: true, // Allow credentials (if needed)
-}));
+// app.use(cors({
+//     origin: allowedOrigins, // Only allow specified origins
+//     methods: ['GET', 'POST', 'PUT', 'DELETE'], // Specify allowed methods
+//     credentials: true, // Allow credentials (if needed)
+// }));
 mongoose.connect(process.env.MONGODB_URI).then(()=>{
     console.log('connected to db');
  }).catch((err)=>{
     console.log(err.message);
  })
+ app.use(cors({
+    origin: 'http://localhost:3001', // Your frontend URL
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true,
+  }));
 // app.get("/api/products",(req,res)=>{
 //     res.send(data.products);
 // });
