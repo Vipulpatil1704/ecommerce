@@ -16,7 +16,7 @@ export default function SignupScreen() {
             alert("Password and conform Password doesn't match");
             return ;
         }
-        const response=await fetch('/api/Users/signup',{
+        const response=await fetch('https://amazona-puce.vercel.app/api/Users/signup',{
             method:'POST',
             headers:{
                 'content-type':'application/json',
