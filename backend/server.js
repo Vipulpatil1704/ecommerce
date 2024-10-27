@@ -21,7 +21,9 @@ mongoose.connect(process.env.MONGODB_URI).then(()=>{
 //     res.send(data.products);
 // });
 app.use('/api/products',productRouter);
-
+app.get('/',(req,res)=>{
+    res.json("hello");
+});
 //all routes related to product is in productRoute.js 
 
 //Initially we have stored products on server itself in data.js file that's why we have created this api. but now data for products is stored in db.
